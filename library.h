@@ -28,6 +28,6 @@
  *   character does not match.
  * - Assumes both input strings are valid null-terminated strings.
  */
-int str_comp(char *pivot, char *target);
+int str_comp(const char *pivot, const char *target);
 
 #endif //STR_COMP_LIBRARY_H
