@@ -39,20 +39,16 @@
 int str_comp(const char* pivot, const char* target)
 {
     // Iterate through all characters
-    for (long i = 0; pivot[i] != '\0'; i++)
+    while (*pivot)
     {
         // Get the characters
-        const char pivot_char = pivot[i];
-        const char target_char = target[i];
+        const char pivot_char = *pivot;
+        const char target_char = *target;
 
-        // See if we finish one before the other
-        if (
-            (pivot_char == '\0' && target_char != '\0') ||
-            (pivot_char != '\0' && target_char == '\0')
-        )
+        // Break if we have found the end of the target
+        if (target_char == '\0')
         {
-            // Return FALSE immediately
-            return FALSE;
+            break;
         }
 
         // Compare the characters
@@ -61,6 +57,25 @@ int str_comp(const char* pivot, const char* target)
             // Return FALSE immediately
             return FALSE;
         }
+
+        // Move to the next character
+        pivot++;
+        target++;
     }
+
+    // Get the characters finally
+    const char pivot_char = *pivot;
+    const char target_char = *target;
+
+    // See if we finish one before the other
+    if (
+        (pivot_char == '\0' && target_char != '\0') ||
+        (pivot_char != '\0' && target_char == '\0')
+    )
+    {
+        // Return FALSE immediately
+        return FALSE;
+    }
+
     return TRUE;
 }
