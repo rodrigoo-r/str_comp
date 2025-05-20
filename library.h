@@ -16,6 +16,17 @@ extern "C"
 {
 #endif
 
+ // Define true/false values
+#ifndef TRUE
+#define TRUE 1
+#endif
+
+#ifndef FALSE
+#define FALSE 0
+#endif
+
+#include "library.h"
+
 /**
  * Compares two null-terminated strings for equality.
  *
@@ -33,7 +44,49 @@ extern "C"
  *   character does not match.
  * - Assumes both input strings are valid null-terminated strings.
  */
-int str_comp(const char *pivot, const char *target);
+inline int str_comp(const char* pivot, const char* target)
+{
+    // Iterate through all characters
+    while (*pivot)
+    {
+        // Get the characters
+        const char pivot_char = *pivot;
+        const char target_char = *target;
+
+        // Break if we have found the end of the target
+        if (target_char == '\0')
+        {
+            break;
+        }
+
+        // Compare the characters
+        if (pivot_char != target_char)
+        {
+            // Return FALSE immediately
+            return FALSE;
+        }
+
+        // Move to the next character
+        pivot++;
+        target++;
+    }
+
+    // Get the characters finally
+    const char pivot_char = *pivot;
+    const char target_char = *target;
+
+    // See if we finish one before the other
+    if (
+        (pivot_char == '\0' && target_char != '\0') ||
+        (pivot_char != '\0' && target_char == '\0')
+    )
+    {
+        // Return FALSE immediately
+        return FALSE;
+    }
+
+    return TRUE;
+}
 
 #if defined(__cplusplus)
 }
