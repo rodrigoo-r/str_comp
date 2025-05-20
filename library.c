@@ -8,6 +8,11 @@
  * under certain conditions; type `show c' for details.
 */
 
+#if defined(__cplusplus)
+extern "C"
+{
+#endif
+
 // Define true/false values
 #ifndef TRUE
 #define TRUE 1
@@ -79,3 +84,7 @@ int str_comp(const char* pivot, const char* target)
 
     return TRUE;
 }
+
+#if defined(__cplusplus)
+}
+#endif
