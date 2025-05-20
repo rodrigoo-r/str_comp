@@ -11,6 +11,11 @@
 #ifndef STR_COMP_LIBRARY_H
 #define STR_COMP_LIBRARY_H
 
+#if defined(__cplusplus)
+extern "C"
+{
+#endif
+
 /**
  * Compares two null-terminated strings for equality.
  *
@@ -29,5 +34,9 @@
  * - Assumes both input strings are valid null-terminated strings.
  */
 int str_comp(const char *pivot, const char *target);
+
+#if defined(__cplusplus)
+}
+#endif
 
 #endif //STR_COMP_LIBRARY_H
