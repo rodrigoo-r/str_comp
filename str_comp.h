@@ -25,7 +25,7 @@ extern "C"
 #define FALSE 0
 #endif
 
-#include "library.h"
+#include "str_comp.h"
 
 /**
  * Compares two null-terminated strings for equality.
