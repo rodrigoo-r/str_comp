@@ -8,8 +8,8 @@
  * under certain conditions; type `show c' for details.
 */
 
-#ifndef STR_COMP_LIBRARY_H
-#define STR_COMP_LIBRARY_H
+#ifndef FLUENT_LIBC_STR_COMP_LIBRARY_H
+#define FLUENT_LIBC_STR_COMP_LIBRARY_H
 
 #if defined(__cplusplus)
 extern "C"
@@ -92,4 +92,4 @@ inline int str_comp(const char* pivot, const char* target)
 }
 #endif
 
-#endif //STR_COMP_LIBRARY_H
+#endif //FLUENT_LIBC_STR_COMP_LIBRARY_H
