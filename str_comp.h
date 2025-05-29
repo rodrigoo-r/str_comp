@@ -42,7 +42,7 @@ extern "C"
  *   character does not match.
  * - Assumes both input strings are valid null-terminated strings.
  */
-inline int str_comp(const char* pivot, const char* target)
+static inline int str_comp(const char* pivot, const char* target)
 {
     // Iterate through all characters
     while (*pivot)
